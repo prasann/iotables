@@ -1,0 +1,65 @@
+stdin:2: ambiguous syntax (function call x new statement) near '('
+> wifi.sta.getip()
+> wifi.suspend()
+stdin:1: attempt to call field 'suspend' (a nil value)
+stack traceback:
+    stdin:1: in main chunk
+> wifi.suspend
+stdin: bad header in precompiled chunk
+> print(wifi.sta.getip())
+stdin: bad header in precompiled chunk
+> wifi.sta.getip()
+> print(wifi.sta.getip())
+192.168.2.160    255.255.255.0    192.168.2.1
+> gpio.mode(4,gpio.OUTPUT)
+> gpio.write(4,gpio.LOW)
+> gpio.write(4,gpio.HIGH)
+stdin: bad header in precompiled chunk
+> gpio.write
+stdin: bad header in precompiled chunk
+> gpio.write(4,gpio.HIGH)
+> gpio.write(4,gpio.LOW)
+stdin: bad header in precompiled chunk
+>  
+> gpio.write(4,gpio.HIGH)
+> gpio.write(4,gpio.LOW)
+> gpio.write(4,gpio.HIGH)
+> gpio.write(4,gpio.LOW)
+> m = mqtt.Client("esp", 120)
+> m:on("connect", function(client) print("conected") end)
+>                              
+> m = mqtt.Client("esp", 120, "rgvtpvvg", "p1CTGZHxybZf")
+> m
+>> ()
+stdin:2: ambiguous syntax (function call x new statement) near '('
+> print(m)
+userdata: 3fff16b0
+> m:on("connect", function(client) print("connected") end)
+> m:connect("m23.cloudmqtt.com", 29916, 1)
+> connected
+
+> m:subscribe("/topic", 0, function(client) print("subscribed") end)
+stdin:1: unexpected symbol near 'char(27)'
+> m:subscribe("/topic", 0, function(client) print("yes") end)
+> yes
+
+> 
+> m:on("message", function(client, topic, data)
+>> print(topic .. ":")
+>> if data ~= nil then
+>> print(data)
+>> end 
+>> end)
+> 
+> 
+> 
+> 
+> /topic:
+huh?
+
+> 
+> m:on("message", function(client, topic, data)
+>> if data == "on" then
+>> gpio:write(4, gpio.HIGH)
+>> else
+>> gpio:write(4, gpio.LOW)
