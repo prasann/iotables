@@ -3,7 +3,7 @@ import './App.css';
 import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
 import { withStyles } from 'material-ui/styles';
-import Typography from "material-ui/es/Typography/Typography";
+import Typography from "material-ui/Typography";
 
 const buttonOverrides = {
   button: {
