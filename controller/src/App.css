@@ -1,18 +1,23 @@
+.center-align {
+    text-align: center;
+}
+
 .main-grid {
-    min-height: 100vh;
-    margin: 0;
+    height: 90vh;
+    margin: 20px;
 }
 
 .center-panel {
+    margin: 20px;
     display: flex;
     flex-direction: row;
     padding: 20px;
 }
 
 .left-section {
-    margin: 10px;
+    margin: 0 20px;
 }
 
 .right-section {
-    margin: 10px;
+    margin: 0 20px;
 }
