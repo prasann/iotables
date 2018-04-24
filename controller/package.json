@@ -2,6 +2,7 @@
   "name": "controller",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/iotables",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "material-ui": "^1.0.0-beta.43",
