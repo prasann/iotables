@@ -1,0 +1,18 @@
+.main-grid {
+    min-height: 100vh;
+    margin: 0;
+}
+
+.center-panel {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.left-section {
+    margin: 10px;
+}
+
+.right-section {
+    margin: 10px;
+}
