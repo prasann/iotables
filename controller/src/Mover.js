@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Typography from "material-ui/Typography";
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
+import Transmitter from './transmitter';
 import { withStyles } from 'material-ui/styles';
 import './Mover.css';
 
@@ -22,19 +23,22 @@ class MoverSection extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { connection: props.scannerData };
+    this.transmitter = new Transmitter(props.scannerData);
+    this.tableUp = this.tableUp.bind(this);
+    this.tableDown = this.tableDown.bind(this);
+    this.mouseUp = this.mouseUp.bind(this);
   }
 
   tableDown() {
-    console.log("Table Down");
+    this.transmitter.sendMessage("DOWN");
   }
 
   tableUp() {
-    console.log("Table Up");
+    this.transmitter.sendMessage("UP");
   }
 
   mouseUp() {
-    console.log("Table Stop");
+    this.transmitter.sendMessage("STOP");
   }
 
   render() {
