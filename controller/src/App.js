@@ -10,11 +10,13 @@ class App extends Component {
   }
 
   setTableDetails(data) {
-    this.setState({ details: data });
+    this.setState({ scannerData: data });
   };
 
   render() {
-    return this.state.details ? <Mover /> : <Scanner handleScan={this.setTableDetails} />
+    return this.state.scannerData
+      ? <Mover scannerData={this.state.scannerData} />
+      : <Scanner handleScan={this.setTableDetails} />
   }
 }
 

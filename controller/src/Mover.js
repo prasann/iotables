@@ -24,6 +24,7 @@ const MoverSection = (props) =>
       <Typography className={props.classes.heading} variant='display2' align='center' >
         <span >Hold the button to move </span >
       </Typography >
+      {console.log(props.scannerData)}
       <div className='center-panel' >
         <section className='left-section' >
           <Button className={props.classes.button} variant="raised" color="primary" >
