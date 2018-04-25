@@ -24,21 +24,6 @@ class MoverSection extends Component {
   constructor(props) {
     super(props);
     this.transmitter = new Transmitter(props.scannerData);
-    this.tableUp = this.tableUp.bind(this);
-    this.tableDown = this.tableDown.bind(this);
-    this.mouseUp = this.mouseUp.bind(this);
-  }
-
-  tableDown() {
-    this.transmitter.sendMessage("DOWN");
-  }
-
-  tableUp() {
-    this.transmitter.sendMessage("UP");
-  }
-
-  mouseUp() {
-    this.transmitter.sendMessage("STOP");
   }
 
   render() {
@@ -50,16 +35,16 @@ class MoverSection extends Component {
         <div className='center-panel' >
           <section className='left-section' >
             <Button
-              onMouseDown={this.tableUp}
-              onMouseUp={this.mouseUp}
+              onMouseDown={this.transmitter.moveUp}
+              onMouseUp={this.transmitter.stopMovement}
               className={this.props.classes.button} variant="raised" color="primary" >
               <span >Up</span >
             </Button >
           </section >
           <section className='right-section' >
             <Button
-              onMouseDown={this.tableDown}
-              onMouseUp={this.mouseUp}
+              onMouseDown={this.transmitter.moveDown}
+              onMouseUp={this.transmitter.stopMovement}
               className={this.props.classes.button} variant="raised" color="secondary" >
               <span >Down</span >
             </Button >

@@ -17,6 +17,18 @@ class Transmitter {
   sendMessage(message) {
     this.client.publish(this.channel, message);
   }
+
+  moveUp() {
+    this.sendMessage("up");
+  }
+
+  moveDown() {
+    this.sendMessage("down");
+  }
+
+  stopMovement() {
+    this.sendMessage("stop");
+  }
 }
 
 export default Transmitter;
