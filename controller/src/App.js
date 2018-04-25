@@ -15,8 +15,7 @@ class App extends Component {
 
   render() {
     return this.state.scannerData
-      ? <Mover scannerData={this.state.scannerData} />
-      : <Scanner handleScan={this.setTableDetails} />
+      ? <Scanner handleScan={this.setTableDetails} /> : <Mover scannerData={"something"} />
   }
 }
 
