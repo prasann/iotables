@@ -23,11 +23,19 @@ class MoverSection extends Component {
 
   constructor(props) {
     super(props);
+    this.defaultMover = this.defaultMover.bind(this);
+    this.mexicanWave = this.mexicanWave.bind(this);
+    this.state = { mexican: props.scannerData.mexican, waveStarted: false };
     this.transmitter = new Transmitter(props.scannerData);
+    this.startWave = this.startWave.bind(this);
   }
 
-  render() {
-    return (<Grid className='main-grid' container spacing={24} justify='center' alignItems='center' >
+  startWave(){
+    this.setState({waveStarted: true}, () => this.transmitter.mexicanWave());
+  }
+
+  defaultMover() {
+    return <Grid className='main-grid' container spacing={24} justify='center' alignItems='center' >
       <div >
         <Typography className={this.props.classes.heading} variant='display2' align='center' >
           <span >Hold the button to move </span >
@@ -51,9 +59,30 @@ class MoverSection extends Component {
           </section >
         </div >
       </div >
-    </Grid >);
+    </Grid >;
+  }
+
+  mexicanWave() {
+    return <Grid className='main-grid' container spacing={24} justify='center' alignItems='center' >
+      <div >
+        <Typography className={this.props.classes.heading} variant='display2' align='center' >
+          <span >Sit back and relax for the Mexican Wave</span >
+        </Typography >
+        <div className='center-align' >
+          <Button
+            onClick={this.startWave}
+            disabled={this.state.waveStarted}
+            className={this.props.classes.button} variant="raised" color="primary" >
+            <span >Start</span >
+          </Button >
+        </div >
+      </div >
+    </Grid >;
+  }
+
+  render() {
+    return this.state.mexican ? this.mexicanWave() : this.defaultMover();
   }
 }
-
 
 export default withStyles(styleOverrides)(MoverSection);
