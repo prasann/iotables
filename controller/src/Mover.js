@@ -44,7 +44,9 @@ class MoverSection extends Component {
           <section className='left-section' >
             <Button
               onMouseDown={this.transmitter.moveUp}
+              onTouchStart={this.transmitter.moveUp}
               onMouseUp={this.transmitter.stopMovement}
+              onTouchEnd={this.transmitter.stopMovement}
               className={this.props.classes.button} variant="raised" color="primary" >
               <span >Up</span >
             </Button >
@@ -52,7 +54,9 @@ class MoverSection extends Component {
           <section className='right-section' >
             <Button
               onMouseDown={this.transmitter.moveDown}
+              onTouchStart={this.transmitter.moveDown}
               onMouseUp={this.transmitter.stopMovement}
+              onTouchEnd={this.transmitter.stopMovement}
               className={this.props.classes.button} variant="raised" color="secondary" >
               <span >Down</span >
             </Button >
